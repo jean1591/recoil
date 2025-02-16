@@ -1,20 +1,10 @@
-import {
-  ActivityIndicator,
-  FlatList,
-  Image,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ActivityIndicator, FlatList, Text, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 
 import { Card } from "@/components/Cards";
-import Filters from "@/components/Filters";
 import NoResults from "@/components/NoResults";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Search from "@/components/Search";
 import { getProperties } from "@/lib/appwrite";
-import icons from "@/constants/icons";
 import { useAppwrite } from "@/lib/useAppWrite";
 import { useEffect } from "react";
 

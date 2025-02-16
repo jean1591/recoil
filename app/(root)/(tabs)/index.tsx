@@ -19,6 +19,10 @@ export default function Index() {
     return router.push(`/properties/${id}`);
   };
 
+  const handleFirearmProfilesPress = () => {
+    return router.push("/firearm-profiles");
+  };
+
   return (
     <SafeAreaView className="bg-white h-full px-5">
       <View className="">
@@ -44,7 +48,10 @@ export default function Index() {
                 Add session
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity className="flex-1 flex items-center justify-center p-2 bg-primary-300 rounded-full">
+            <TouchableOpacity
+              onPress={handleFirearmProfilesPress}
+              className="flex-1 flex items-center justify-center p-2 bg-primary-300 rounded-full"
+            >
               <Text className="font-rubik-bold text-lg text-white">
                 See profiles
               </Text>
