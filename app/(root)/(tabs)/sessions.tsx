@@ -6,20 +6,19 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Card, FeaturedCard } from "@/components/Cards";
-import { getLatestProperties, getProperties } from "@/lib/appwrite";
 import { router, useLocalSearchParams } from "expo-router";
 
+import { Card } from "@/components/Cards";
 import Filters from "@/components/Filters";
 import NoResults from "@/components/NoResults";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Search from "@/components/Search";
+import { getProperties } from "@/lib/appwrite";
 import icons from "@/constants/icons";
 import { useAppwrite } from "@/lib/useAppWrite";
 import { useEffect } from "react";
-import { useGlobalContext } from "@/lib/globalProvider";
 
-export default function Explore() {
+export default function Sessions() {
   const params = useLocalSearchParams<{ query?: string; filter?: string }>();
 
   const {
