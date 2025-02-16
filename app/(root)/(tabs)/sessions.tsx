@@ -48,7 +48,7 @@ export default function Sessions() {
   };
 
   return (
-    <SafeAreaView className="bg-white h-full">
+    <SafeAreaView className="bg-white h-full px-5">
       <FlatList
         keyExtractor={(item) => item.$id}
         ListEmptyComponent={
@@ -58,41 +58,20 @@ export default function Sessions() {
             <NoResults />
           )
         }
-        numColumns={2}
         contentContainerClassName="pb-32"
-        columnWrapperClassName="flex gap-5 px-5"
         showsVerticalScrollIndicator={false}
         data={properties}
         renderItem={({ item }) => (
           <Card item={item} onPress={() => handleCardPress(item.$id)} />
         )}
         ListHeaderComponent={
-          <View className="px-5">
-            <View className="flex flex-row items-center justify-between mt-5">
-              <TouchableOpacity
-                onPress={() => router.back()}
-                className="flex flex-row bg-primary-200 rounded-full size-11 items-center justify-center"
-              >
-                <Image source={icons.backArrow} className="size-5" />
-              </TouchableOpacity>
-
-              <Text className="text-base mr-2 text-center font-rubik-medium text-black-300">
-                Search for your ideal home
-              </Text>
-
-              <Image source={icons.bell} className="h-6 w-6" />
-            </View>
-
-            <Search />
-
-            <View className="mt-5">
-              <Filters />
-              <View className="mt-5">
-                <Text className="text-xl font-rubik-bold text-black-300 mt-5">
-                  Found {properties?.length} properties
-                </Text>
-              </View>
-            </View>
+          <View className="mt-5">
+            <Text className="text-3xl font-rubik-extrabold text-black-300">
+              Activity
+            </Text>
+            <Text className="text-xl font-rubik-bold text-black-300 mt-5">
+              Found {properties?.length} sessions
+            </Text>
           </View>
         }
       />

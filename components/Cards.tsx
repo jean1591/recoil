@@ -25,7 +25,7 @@ export const FeaturedCard = ({
         className="size-full rounded-2xl absolute bottom-0"
       />
 
-      <View className="flex flex-row items-center bg-white/90 px-3 py-1.5 rounded-full absolute top-5 right-5">
+      <View className="flex flex-row items-center px-3 py-1.5 rounded-full absolute top-5 right-5">
         <Image source={icons.star} className="size-3.5" />
         <Text className="text-xs font-rubik-bold text-primary-300 ml-1">
           {rating}
@@ -52,37 +52,22 @@ export const FeaturedCard = ({
   );
 };
 
-export const Card = ({
-  item: { image, rating, name, address, price },
-  onPress,
-}: Props) => {
+export const Card = ({ item: { image }, onPress }: Props) => {
   return (
     <TouchableOpacity
-      className="flex-1 w-full mt-4 px-3 py-4 rounded-lg bg-white shadow-lg shadow-black-100/70 relative"
+      className="flex-1 w-full mt-4 px-3 py-4 rounded-xl bg-primary-100 flex flex-row items-center justify-start gap-5"
       onPress={onPress}
     >
-      <View className="flex flex-row items-center absolute px-2 top-5 right-5 bg-white/90 p-1 rounded-full z-50">
-        <Image source={icons.star} className="size-2.5" />
-        <Text className="text-xs font-rubik-bold text-primary-300 ml-0.5">
-          {rating}
+      <Image source={{ uri: image }} className="size-32 rounded-lg" />
+
+      <View className="mt-2">
+        <Text className="text-xl font-rubik-bold text-black-300">
+          Savage BF 22 LR
         </Text>
-      </View>
 
-      <Image source={{ uri: image }} className="w-full h-40 rounded-lg" />
-
-      <View className="flex flex-col mt-2">
-        <Text className="text-base font-rubik-bold text-black-300">{name}</Text>
-        <Text className="text-xs font-rubik text-black-100">{address}</Text>
-
-        <View className="flex flex-row items-center justify-between mt-2">
-          <Text className="text-base font-rubik-bold text-primary-300">
-            ${price}
-          </Text>
-          <Image
-            source={icons.heart}
-            className="w-5 h-5 mr-2"
-            tintColor="#191D31"
-          />
+        <View className="text-base flex flex-row items-center justify-between">
+          <Text className="font-rubik text-black-100">2024-10-14</Text>
+          <Text className="font-rubik text-black-300">100m</Text>
         </View>
       </View>
     </TouchableOpacity>
